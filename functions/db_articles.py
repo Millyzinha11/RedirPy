@@ -177,3 +177,20 @@ def search_articles(mysql, query, limit=0):
     cur.close()
 
     return articles
+
+def less_viewed(mysql, limit=4):  # Os artigos mais visualizados
+
+    sql = '''
+        SELECT art_id, art_title, art_thumbnail
+        FROM article 
+        WHERE art_status = 'on'
+            AND art_date <= NOW()
+        ORDER BY art_views 
+        LIMIT %s
+    '''
+    cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cur.execute(sql, (limit,))
+    articles = cur.fetchall()
+    cur.close()
+
+    return articles

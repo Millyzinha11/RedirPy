@@ -11,7 +11,7 @@
     {% endif %}
     <link rel="shortcut icon" href="/static/img/favicon.alpha.png" type="image/x-icon">
     {# Título da página #}
-    <title>{{ page.title }}</title>
+    <title>FlaskBlog da Milly</title>
 </head>
 
 <body>
@@ -21,7 +21,7 @@
         <header>
             <div>
                 <a href="/"><i class="fa-solid fa-camera-retro fa-fw fa-4x"></i></a>
-                <h1>FlaskBlog</h1>
+                <h1>FlaskBlog da Milly</h1>
             </div>
             <form action="/search" method="get">
                 <input type="search" name="q" placeholder="Procurar" value="{{ page.query }}">
@@ -77,7 +77,7 @@
     {# Verifica se solicitou a carga do JavaScript da página #}
     {% if page.js %}
     <script src="/static/js/{{ page.js }}"></script>
-    {% endif %}
+    {% endif %} 
 
 </body>
 
